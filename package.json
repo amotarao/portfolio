@@ -1,20 +1,19 @@
 {
   "name": "amon-portfolio",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "export": "nuxt-ts export",
     "serve": "nuxt-ts serve",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
+    "lint:js": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
+    "lint:style": "stylelint **/*.{vue,css,scss} --ignore-path .gitignore",
     "lint": "yarn lint:js && yarn lint:style"
   },
   "lint-staged": {
-    "*.{js,vue}": "eslint",
-    "*.{css,vue}": "stylelint"
+    "*.{js,ts,vue}": "eslint --fix",
+    "*.{css,scss,vue}": "stylelint --fix"
   },
   "husky": {
     "hooks": {
