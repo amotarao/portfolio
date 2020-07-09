@@ -1,3 +1,8 @@
+import Sass from 'sass';
+import Fiber from 'fibers';
+
+const isProduction = process.env.NODE_ENV === 'production';
+
 export default {
   srcDir: 'src',
   /*
@@ -66,5 +71,19 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    loaders: {
+      cssModules: {
+        modules: {
+          localIdentName: isProduction ? '[hash:base64:5]' : '[name]_[local]_[hash:base64:5]',
+        },
+      },
+      scss: {
+        implementation: Sass,
+        sassOptions: {
+          fiber: Fiber,
+        },
+      },
+    },
+  },
 };
