@@ -53,6 +53,7 @@ export default {
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/style-resources',
   ],
   /*
    ** Nuxt.js modules
@@ -62,6 +63,9 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
   ],
+  styleResources: {
+    scss: ['./src/assets/scss/_variables.scss', './src/assets/scss/_mixins.scss'],
+  },
   /*
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration
