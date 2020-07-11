@@ -1,6 +1,7 @@
 <template>
   <section :class="$style.wrapper">
-    <nuxt-content :class="$style.content" :document="document" />
+    <!-- Memo: クラス名がそのまま連結されてしまうので、それ避け -->
+    <nuxt-content :class="`${$style.content} `" :document="document" />
   </section>
 </template>
 
