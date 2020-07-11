@@ -1,9 +1,7 @@
 <template>
   <div>
     <WorkHeader v-bind="headerAttrs">{{ page.title }}</WorkHeader>
-    <section :class="$style.content">
-      <nuxt-content :document="page" />
-    </section>
+    <WorkContent :document="page" />
   </div>
 </template>
 
@@ -53,11 +51,3 @@ export default Vue.extend({
   },
 });
 </script>
-
-<style lang="scss" module>
-.content {
-  margin: auto;
-  max-width: 702px;
-  padding: 0 32px;
-}
-</style>
