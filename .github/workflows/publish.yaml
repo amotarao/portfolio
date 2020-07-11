@@ -41,22 +41,14 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-
-    - name: Setup Node.js 10
-      uses: actions/setup-node@v1
-      with:
-        node-version: 10
-
     - name: Download Artifact
       uses: actions/download-artifact@master
       with:
         name: build
         path: ./dist
 
-    - name: Install to firebase-tools
-      run: npm i -g gh-pages
-
     - name: Publish
-      run: npx gh-pages --dotfiles -dist dist --remote git@github.com:$GITHUB_REPOSITORY.git
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
