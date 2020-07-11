@@ -24,6 +24,9 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" module>
+$blur: 4px;
+$blur2: 7px;
+
 .button {
   display: block;
   border-radius: 8px;
@@ -31,13 +34,13 @@ export default Vue.extend({
   height: 64px;
   width: 64px;
   padding: 16px;
-  box-shadow: 9px 9px 16px rgba(#ccccd0, 0.5), -9px -9px 16px rgba(#fff, 0.5), inset 9px 9px 16px rgba(#ccccd0, 0),
-    inset -9px -9px 16px rgba(#fff, 0);
+  box-shadow: $blur $blur $blur2 rgba(#ccccd0, 0.5), #{-$blur} #{-$blur} $blur2 rgba(#fff, 0.5),
+    inset $blur $blur $blur2 rgba(#ccccd0, 0), inset #{-$blur} #{-$blur} $blur2 rgba(#fff, 0);
   transition: box-shadow 0.1s ease-out;
 
   &:hover {
-    box-shadow: 9px 9px 16px rgba(#ccccd0, 0), -9px -9px 16px rgba(#fff, 0), inset 9px 9px 16px rgba(#ccccd0, 0.5),
-      inset -9px -9px 16px rgba(#fff, 0.5);
+    box-shadow: $blur $blur $blur2 rgba(#ccccd0, 0), #{-$blur} #{-$blur} $blur2 rgba(#fff, 0),
+      inset $blur $blur $blur2 rgba(#ccccd0, 0.5), inset #{-$blur} #{-$blur} $blur2 rgba(#fff, 0.5);
     transition: box-shadow 0.2s ease-out;
   }
 
