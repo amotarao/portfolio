@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :class="$style.wrapper" :to="`/works/${slug}`">
+  <nuxt-link :class="$style.wrapper" :to="`/works/${slug}/`">
     <div :class="$style.imageWrapper">
       <img :class="$style.image" :src="thumbnailUrl" width="640" height="640" loading="lazy" />
     </div>
