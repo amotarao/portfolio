@@ -16,6 +16,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'さわむらあもんのポートフォリオ' },
+      { hid: 'robots', name: 'robots', content: 'noindex' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:title', property: 'og:title', content: 'あもんポートフォリオ' },
       { hid: 'og:description', property: 'og:description', content: 'さわむらあもんのポートフォリオ' },
