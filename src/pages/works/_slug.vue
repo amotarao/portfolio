@@ -22,6 +22,11 @@ export default Vue.extend({
       title: page.title,
     };
   },
+  head() {
+    return {
+      title: (this as any).title,
+    };
+  },
 });
 </script>
 
