@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.wrapper">
-    <nuxt-link :class="$style.button" to="/"> <IconTwitter /></nuxt-link>
+    <nuxt-link :class="$style.button" to="/"><IconHome /></nuxt-link>
     <p :class="$style.text">あもん ポートフォリオ</p>
   </div>
 </template>
