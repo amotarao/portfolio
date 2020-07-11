@@ -1,5 +1,6 @@
 <template>
   <div>
+    <HomeButton />
     <WorkHeader v-bind="headerAttrs">{{ page.title }}</WorkHeader>
     <WorkContent :document="page" />
   </div>

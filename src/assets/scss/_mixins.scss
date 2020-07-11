@@ -48,6 +48,15 @@
   padding: 16px 32px;
 }
 
+@mixin square-button-small() {
+  @include anchor-base();
+
+  border-radius: 8px;
+  padding: 12px;
+  height: 48px;
+  width: 48px;
+}
+
 @mixin square-button-medium() {
   @include anchor-base();
 

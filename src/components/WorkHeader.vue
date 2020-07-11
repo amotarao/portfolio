@@ -41,7 +41,7 @@ export default Vue.extend({
   @include shadow(16px, false);
 
   height: fit-content;
-  padding: 80px var(--spacing) 0;
+  padding: 120px var(--spacing) 0;
   margin-bottom: 120px;
   display: grid;
   grid-template-areas:
