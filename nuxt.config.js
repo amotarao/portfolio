@@ -28,7 +28,7 @@ export default {
   },
   css: ['./src/assets/scss/global.scss'],
   plugins: [],
-  components: true,
+  components: ['~/components', { path: '~/components/icons/', prefix: 'icon' }],
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/stylelint-module', '@nuxtjs/style-resources'],
   modules: ['@nuxtjs/pwa', '@nuxt/content'],
   styleResources: {

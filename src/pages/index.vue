@@ -2,6 +2,7 @@
   <div>
     <TheHeader>あもん ポートフォリオ</TheHeader>
     <WorkList :works="works" />
+    <SocialList />
   </div>
 </template>
 
