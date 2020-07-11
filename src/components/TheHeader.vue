@@ -7,14 +7,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-export default Vue.extend({
-  props: {
-    head: {
-      type: String,
-      required: true,
-    },
-  },
-});
+export default Vue.extend({});
 </script>
 
 <style lang="scss" module>
