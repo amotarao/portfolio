@@ -1,0 +1,62 @@
+name: Publish
+
+on:
+  push:
+    branches:
+    - develop
+  pull_request:
+    branches:
+    - develop
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js 10
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10
+
+    - name: Install dependencies
+      run: yarn --frozen-lockfile
+
+    - name: Run build
+      run: yarn build
+
+    - name: Run export
+      run: yarn export
+
+    - name: Archive Production Artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: build
+        path: ./dist
+
+  deploy:
+    name: Publish
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js 10
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10
+
+    - name: Download Artifact
+      uses: actions/download-artifact@master
+      with:
+        name: build
+        path: ./dist
+
+    - name: Install to firebase-tools
+      run: npm i -g gh-pages
+
+    - name: Publish
+      run: npx gh-pages --dotfiles -dist dist --remote git@github.com:${{ GITHUB_REPOSITORY }}.git
