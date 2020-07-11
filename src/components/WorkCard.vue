@@ -24,8 +24,9 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" module>
-$blur: 4px;
-$blur2: 7px;
+$blur: 9px;
+$blur2: 16px;
+
 .wrapper {
   display: block;
   border-radius: 32px;
