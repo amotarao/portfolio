@@ -1,7 +1,7 @@
 <template>
   <nuxt-link :class="$style.wrapper" :to="`/works/${slug}`">
     <div :class="$style.imageWrapper">
-      <img :class="$style.image" src="https://loremflickr.com/640/640" width="640" height="640" loading="lazy" />
+      <img :class="$style.image" :src="thumbnailUrl" width="640" height="640" loading="lazy" />
     </div>
   </nuxt-link>
 </template>
@@ -12,6 +12,10 @@ import Vue from 'vue';
 export default Vue.extend({
   props: {
     slug: {
+      type: String,
+      required: true,
+    },
+    thumbnailUrl: {
       type: String,
       required: true,
     },
