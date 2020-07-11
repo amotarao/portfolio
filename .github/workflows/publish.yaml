@@ -59,4 +59,4 @@ jobs:
       run: npm i -g gh-pages
 
     - name: Publish
-      run: npx gh-pages --dotfiles -dist dist --remote git@github.com:${{ GITHUB_REPOSITORY }}.git
+      run: npx gh-pages --dotfiles -dist dist --remote git@github.com:${{ env.GITHUB_REPOSITORY }}.git
