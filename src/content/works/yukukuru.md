@@ -1,5 +1,7 @@
 ---
 title: ゆくくる
+introduction: フォロワーがいつきたか、いつなくなったかを記録・表示するWebアプリ
+url: https://yukukuru.app
 thumbnailUrl: https://pbs.twimg.com/media/Ecncw7XU4AAvtzN?format=png&name=medium
 ---
 
