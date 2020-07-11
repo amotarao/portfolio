@@ -37,14 +37,12 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" module>
-$blur: 9px;
-$blur2: 16px;
-
 .header {
+  @include shadow(16px, false);
+
   height: fit-content;
-  padding-top: 80px;
+  padding: 80px var(--spacing) 0;
   margin-bottom: 120px;
-  box-shadow: $blur $blur $blur2 rgba(#ccccd0, 0.5), #{-$blur} #{-$blur} $blur2 rgba(#fff, 0.5);
   display: grid;
   grid-template-areas:
     'head'
@@ -52,7 +50,7 @@ $blur2: 16px;
     'image';
   grid-template-columns: fit-content(1200px);
   grid-template-rows: auto auto fit-content(480px);
-  gap: 32px;
+  gap: var(--spacing);
   justify-content: center;
 }
 
@@ -60,17 +58,19 @@ $blur2: 16px;
   font-size: 32px;
   grid-area: head;
   text-align: center;
-  padding: 0 32px;
 }
 
 .introduction {
   grid-area: introduction;
   text-align: center;
-  padding: 0 32px;
   white-space: pre-line;
 
   p {
-    margin-bottom: 32px;
+    margin-bottom: $spacing;
+
+    @include larger-than($medium) {
+      margin-bottom: $spacing-large;
+    }
   }
 }
 
@@ -78,7 +78,6 @@ $blur2: 16px;
   grid-area: image;
   overflow: hidden;
   text-align: center;
-  padding: 0 32px;
 
   img {
     height: auto;

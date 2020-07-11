@@ -14,6 +14,6 @@ export default Vue.extend({});
 .header {
   font-size: 24px;
   text-align: center;
-  padding: 64px 32px;
+  padding: 64px var(--spacing);
 }
 </style>

@@ -16,27 +16,12 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" module>
-$blur: 4px;
-$blur2: 7px;
-
 .button {
+  @include button-medium();
+  @include shadow(8px);
+
   display: inline-flex;
   align-items: center;
-  border-radius: 8px;
-  background: #f0f0f5;
-  padding: 16px 64px;
-  box-shadow: $blur $blur $blur2 rgba(#ccccd0, 0.5), #{-$blur} #{-$blur} $blur2 rgba(#fff, 0.5),
-    inset $blur $blur $blur2 rgba(#ccccd0, 0), inset #{-$blur} #{-$blur} $blur2 rgba(#fff, 0);
-  transition: box-shadow 0.1s ease-out;
-  color: inherit;
-  text-decoration: none;
-  font-weight: bold;
-
-  &:hover {
-    box-shadow: $blur $blur $blur2 rgba(#ccccd0, 0), #{-$blur} #{-$blur} $blur2 rgba(#fff, 0),
-      inset $blur $blur $blur2 rgba(#ccccd0, 0.5), inset #{-$blur} #{-$blur} $blur2 rgba(#fff, 0.5);
-    transition: box-shadow 0.2s ease-out;
-  }
 }
 
 .icon {

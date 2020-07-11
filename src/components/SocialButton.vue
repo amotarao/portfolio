@@ -24,32 +24,18 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" module>
-$blur: 4px;
-$blur2: 7px;
-
 .button {
-  display: block;
-  border-radius: 8px;
-  background: #f0f0f5;
-  height: 64px;
-  width: 64px;
-  padding: 16px;
-  box-shadow: $blur $blur $blur2 rgba(#ccccd0, 0.5), #{-$blur} #{-$blur} $blur2 rgba(#fff, 0.5),
-    inset $blur $blur $blur2 rgba(#ccccd0, 0), inset #{-$blur} #{-$blur} $blur2 rgba(#fff, 0);
-  transition: box-shadow 0.1s ease-out;
+  @include square-button-medium();
+  @include shadow(8px);
 
-  &:hover {
-    box-shadow: $blur $blur $blur2 rgba(#ccccd0, 0), #{-$blur} #{-$blur} $blur2 rgba(#fff, 0),
-      inset $blur $blur $blur2 rgba(#ccccd0, 0.5), inset #{-$blur} #{-$blur} $blur2 rgba(#fff, 0.5);
-    transition: box-shadow 0.2s ease-out;
-  }
+  display: block;
 
   &[data-type='twitter'] {
-    color: #1da1f2;
+    color: $twitter-color;
   }
 
   &[data-type='github'] {
-    color: #24292e;
+    color: $github-color;
   }
 }
 </style>

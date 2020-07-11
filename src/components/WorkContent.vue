@@ -20,8 +20,8 @@ export default Vue.extend({
 <style lang="scss" module>
 .wrapper {
   margin: auto;
-  max-width: 702px;
-  padding: 0 32px;
+  max-width: calc(640px + var(--spacing) * 2);
+  padding: 0 var(--spacing);
 }
 
 .content {

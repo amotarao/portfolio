@@ -26,9 +26,9 @@ export default Vue.extend({
   list-style: none;
   display: grid;
   justify-content: center;
-  gap: 16px;
+  gap: $spacing-small;
   grid-template-columns: repeat(auto-fit, 64px);
   margin: 64px 0;
-  padding: 0 32px;
+  padding: 0 var(--spacing);
 }
 </style>

@@ -28,32 +28,20 @@ $blur: 4px;
 $blur2: 7px;
 
 .button {
+  @include button-small();
+  @include shadow(8px);
+
   display: inline-flex;
   align-items: center;
-  border-radius: 8px;
-  background: #f0f0f5;
-  padding: 8px 16px;
-  box-shadow: $blur $blur $blur2 rgba(#ccccd0, 0.5), #{-$blur} #{-$blur} $blur2 rgba(#fff, 0.5),
-    inset $blur $blur $blur2 rgba(#ccccd0, 0), inset #{-$blur} #{-$blur} $blur2 rgba(#fff, 0);
-  transition: box-shadow 0.1s ease-out;
-  color: inherit;
-  text-decoration: none;
-  font-size: 0.8em;
-
-  &:hover {
-    box-shadow: $blur $blur $blur2 rgba(#ccccd0, 0), #{-$blur} #{-$blur} $blur2 rgba(#fff, 0),
-      inset $blur $blur $blur2 rgba(#ccccd0, 0.5), inset #{-$blur} #{-$blur} $blur2 rgba(#fff, 0.5);
-    transition: box-shadow 0.2s ease-out;
-  }
-
-  &[data-type='github'] {
-    color: #24292e;
-  }
 }
 
 .icon {
   height: 1em;
   width: 1em;
   margin-right: 0.5em;
+
+  .button[data-type='github'] & {
+    color: $github-color;
+  }
 }
 </style>
