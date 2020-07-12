@@ -1,7 +1,7 @@
 <template>
   <a :class="$style.button" :href="href" target="_blank" rel="noopener" :data-type="type">
-    <IconTwitter v-if="type === 'twitter'" />
-    <IconGitHub v-else-if="type === 'github'" />
+    <IconGitHub v-if="type === 'github'" :class="$style.icon" />
+    <slot />
   </a>
 </template>
 
@@ -24,17 +24,23 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" module>
+$blur: 4px;
+$blur2: 7px;
+
 .button {
-  @include square-button-medium();
+  @include button-small();
   @include shadow(8px);
 
-  display: block;
+  display: inline-flex;
+  align-items: center;
+}
 
-  &[data-type='twitter'] {
-    color: $twitter-color;
-  }
+.icon {
+  height: 1em;
+  width: 1em;
+  margin-right: 0.5em;
 
-  &[data-type='github'] {
+  .button[data-type='github'] & {
     color: $github-color;
   }
 }

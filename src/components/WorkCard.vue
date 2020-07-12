@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :class="$style.wrapper" :to="`/works/${slug}`">
+  <nuxt-link :class="$style.wrapper" :to="`/works/${slug}/`">
     <div :class="$style.imageWrapper">
       <img :class="$style.image" :src="thumbnailUrl" width="640" height="640" loading="lazy" />
     </div>
@@ -10,6 +10,7 @@
 import Vue from 'vue';
 
 export default Vue.extend({
+  inheritAttrs: true,
   props: {
     slug: {
       type: String,
@@ -24,24 +25,15 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" module>
-$blur: 4px;
-$blur2: 7px;
 .wrapper {
+  @include shadow(16px);
+
   display: block;
   border-radius: 32px;
-  background: #f0f0f5;
+  background: $accent-color;
   height: 100%;
   width: 100%;
-  padding: 16px;
-  box-shadow: $blur $blur $blur2 rgba(#ccccd0, 0.5), #{-$blur} #{-$blur} $blur2 rgba(#fff, 0.5),
-    inset $blur $blur $blur2 rgba(#ccccd0, 0), inset #{-$blur} #{-$blur} $blur2 rgba(#fff, 0);
-  transition: box-shadow 0.1s ease-out;
-
-  &:hover {
-    box-shadow: $blur $blur $blur2 rgba(#ccccd0, 0), #{-$blur} #{-$blur} $blur2 rgba(#fff, 0),
-      inset $blur $blur $blur2 rgba(#ccccd0, 0.5), inset #{-$blur} #{-$blur} $blur2 rgba(#fff, 0.5);
-    transition: box-shadow 0.2s ease-out;
-  }
+  padding: $spacing-small;
 }
 
 .imageWrapper {

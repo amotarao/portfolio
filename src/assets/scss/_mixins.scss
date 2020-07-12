@@ -1,1 +1,67 @@
-//
+@mixin larger-than($width) {
+  @media screen and (min-width: $width + 1 + px) {
+    @content;
+  }
+}
+
+@mixin less-than($width) {
+  @media screen and (max-width: $width + px) {
+    @content;
+  }
+}
+
+@mixin shadow($size, $hover: true) {
+  $size-s: $size * 0.55;
+
+  box-shadow: $size-s $size-s $size rgba($bold-color, 0.5), #{-$size-s} #{-$size-s} $size rgba($base-color, 0.5),
+    inset $size-s $size-s $size rgba($bold-color, 0), inset #{-$size-s} #{-$size-s} $size rgba($base-color, 0);
+
+  @if $hover {
+    transition: box-shadow 0.1s ease-out;
+
+    &:hover {
+      box-shadow: $size-s $size-s $size rgba($bold-color, 0), #{-$size-s} #{-$size-s} $size rgba($base-color, 0),
+        inset $size-s $size-s $size rgba($bold-color, 0.5), inset #{-$size-s} #{-$size-s} $size rgba($base-color, 0.5);
+      transition: box-shadow 0.2s ease-out;
+    }
+  }
+}
+
+@mixin anchor-base() {
+  background: $accent-color;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+@mixin button-small() {
+  @include anchor-base();
+
+  border-radius: 8px;
+  font-size: 0.8em;
+  padding: 8px 16px;
+}
+
+@mixin button-medium() {
+  @include anchor-base();
+
+  border-radius: 8px;
+  padding: 16px 32px;
+}
+
+@mixin square-button-small() {
+  @include anchor-base();
+
+  border-radius: 8px;
+  padding: 12px;
+  height: 48px;
+  width: 48px;
+}
+
+@mixin square-button-medium() {
+  @include anchor-base();
+
+  border-radius: 8px;
+  padding: 16px;
+  height: 64px;
+  width: 64px;
+}
